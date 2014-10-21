@@ -11,6 +11,7 @@ namespace GlobalPhoneDbgen
     class Program
     {
         private const string RemoteUrl = "http://libphonenumber.googlecode.com/svn/trunk/resources/PhoneNumberMetadata.xml";
+        private const string AltRemoteUrl = "http://libphonenumber.googlecode.com/svn/trunk/resources/PhoneNumberAlternateFormats.xml";
 
         static void Usage(string nameOfProgram)
         {
@@ -68,6 +69,10 @@ Options:" + (showCompat? @"
                     case "-t":
                     case "--test":
                         method = "test_cases";
+                        break;
+                    case "-a":
+                    case "--alternate":
+                        path = AltRemoteUrl;
                         break;
                     case "-h":
                     case "--help":
